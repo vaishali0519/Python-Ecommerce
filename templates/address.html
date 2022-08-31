@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+     <style>
+
+
+body {
+  padding: 60px 0;
+  background-color: #FFFACD;
+  margin: 0 auto;
+  width: 500px;
+}
+.body-text {
+  padding: 0 20px 30px 20px;
+  font-family: "Roboto";
+  font-size: 1em;
+  color: #008B8B;
+  text-align: center;
+  line-height: 1.2em;
+}
+.form-container {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.personal-information {
+  background-color: #008B8B;
+  color: #fff;
+  padding: 1px 0;
+  text-align: center;
+}
+h1 {
+  font-size: 1.3em;
+  font-family: "Roboto"
+}
+input {
+  margin: 1px 0;
+  padding-left: 3%;
+  font-size: 14px;
+}
+input[type="text"]{
+  display: block;
+  height: 50px;
+  width: 97%;
+  border: none;
+}
+input[type="email"]{
+  display: block;
+  height: 50px;
+  width: 97%;
+  border: none;
+}
+input[type="submit"]{
+  display: block;
+  height: 60px;
+  width: 100%;
+  border: none;
+  background-color: #008B8B;
+  color: #fff;
+  margin-top: 2px;
+  cursor: pointer;
+  font-size: 0.9em;
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+}
+input[type="submit"]:hover{
+  background-color: #008B8B;
+  transition: 0.3s ease;
+}
+#column-left {
+  width: 46.5%;
+  float: left;
+  margin-bottom: 2px;
+}
+#column-right {
+  width: 46.5%;
+  float: right;
+}
+</style>
+</head>
+<body>
+
+
+<form action="pay" method="post">
+    <div class="form-container">
+        <div class="personal-information">
+            <h1>ADDRESS</h1>
+        </div>
+
+        <input type="text" name="name" placeholder="First Name"/>
+        <input type="text" name="phno" placeholder="Phone Number"/>
+        <input id="column-left" type="text" name="state" placeholder="State"/>
+        <input id="column-right" type="text" name="city" placeholder="City"/>
+        <input type="text" name="address" required="required"  maxlength="45" placeholder="Address"/>
+        <input id="column-left" type="text" name="houseno" required="required"  maxlength="20" placeholder="House number"/>
+        <input id="column-right" type="text" name="pincode" required="required"  pattern="[0-9]*" maxlength="6" placeholder="Pin code"/>
+        <input id="input-button" type="submit" value="Submit"/>
+    </div>
+</form>
+
+
+</body>
+</html>

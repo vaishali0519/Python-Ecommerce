@@ -1,0 +1,222 @@
+{% extends 'temp.html' %}
+
+{% block s%}
+
+
+*{
+    font-family:'Comfortaa',cursive;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: clip;
+}
+.cartConatiner{
+    width: 100%;
+    margin: 0 auto;
+}
+.cartConatiner > h1{
+    padding: 20px 0;
+}
+
+
+.product{
+    display: flex;
+    width: 90%;
+    height:200px;
+    overflow: hidden;
+    border:1px soild grey;
+    background-color: #f1f1f1;
+    margin: 30px auto;
+}
+.product:hover{
+    border: none;
+    box-shadow: 2px 5px 30px 10px rgba(0, 0, 0, 0.5);
+    transform: scale(1.01);
+}
+.product > img{
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+.product > img:hover{
+    transform: scale(1.04);
+}
+.product-info{
+    padding: 15px;
+    width: 100%;
+    position: relative;
+}
+.product-name, .product-price, .product-offer{
+    margin-bottom: 10px;
+}
+.product-remove{
+    position: absolute;
+    bottom: 20px;
+    right: 10px;
+    padding: 5px 10px;
+    background-color: green;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.product-remove:hover{
+    background-color: white;
+    color: green;
+    font-weight: 600;
+    border: 1px soild green;
+}
+.product-quantity > input{
+    width: 40px;
+    padding: 5px;
+    text-align: center;
+}
+.fa{
+    margin-right: 5px;
+}
+.cart-total{
+    width: 90%;
+    margin-left: 20px;
+    padding: 20px;
+    height: 240px;
+    border: 1px solid silver;
+    border-radius: 5px;
+    margin: 5px auto 50px auto;
+}
+.cart-total p{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+    font-size: 15px;
+}
+.cart-total a{
+    display: block;
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+    background-color: orangered;
+    color: white;
+    text-decoration: none;
+}
+.cart-total a:hover{
+    background-color: thistle;
+}
+
+@media screen and (max-width: 700px){
+    .remove{
+        display: none;
+    }
+    .product{
+        height: 150px;
+    }
+    .product > img{
+        height: 150px;
+        width: 200px;
+    }
+    .product-name, .product-price, .product-offer{
+        margin-bottom: 10px;
+    }
+}
+@media screen and (max-width: 900px){
+    .cart{
+        flex-direction: column;
+    }
+    .cart-total{
+        margin-left: 0;
+        margin-bottom: 20px;
+    }
+}
+@media screen and (max-width: 1220px){
+    .cartConatiner{
+        max-width: 95%;
+    }
+}
+
+
+{% endblock %}
+
+{% block b%}
+{% if data %}
+{% set sno = 0 %}
+<h1 class="text-center" style="margin-top: 30px">Shopping Cart</h1>
+<div class="row">
+    <div class="col-8">
+        {% for k in data %}
+        <div class="cart">
+            <div class="products">
+                <div class="product" style="padding:0px 50px 0px 50px;">
+                    <img src="../static/photos/{{k[2]}}">
+                    <div class="product-info">
+                        <div class="product-name">{{k[1]}}</div>
+                        <div class="product-price">
+                            {% if k[8]>0 %}
+                            Rs <del>{{k[7]}}</del>{{k[4]}}
+                            {% else %}
+                            Rs. {{k[4]}}
+                            {% endif %}
+                        </div>
+                        <div class="product-offer"> {{k[8]}}%</div>
+                        <div class="product-quantity">Qnt:{{k[6]}}</div>
+                        <form action="removefromcart" method="post">
+                            <input type="hidden" value="{{k[5]}}" name="cartId">
+                            <button type="submit" class="product-remove" onclick="return confirm('Are you sure?')" style="border:none;">
+                                <i class="fa fa-trash"></i>
+                                <span class="remove">Remove</span>
+                            </button>
+                        </form>
+                        {% set price=k[4] %}
+                        {% set totalprice = k[6]*price %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+
+
+
+    </div>
+    <div class="col-4">
+
+        <div class="cart-total">
+        <p>
+            <span>Total Price</span>
+            <span> Rs.{{grandtotal}}</span>
+        </p>
+        <p>
+            <span>Number of Items</span>
+            <span>{{items}}</span>
+        </p>
+        <p>
+            <span>You Save</span>
+            <span>
+                {% set save=withoutdiscount-grandtotal %}
+                {{save}}
+            </span>
+        </p>
+        <div>
+            <a href="purchase?grandtotal={{grandtotal}}">Proceed to checkout</a>
+        </div>
+    </div>
+
+    </div>
+</div>
+
+
+
+
+
+
+{% endif %}
+
+
+{% if Empty %}
+
+<div style="height: 450px;">
+    <img src="static/images/Empty-Cart.jpg" height="450px" width="100%">
+</div>
+
+{% endif %}
+
+{% endblock %}
+
+
+

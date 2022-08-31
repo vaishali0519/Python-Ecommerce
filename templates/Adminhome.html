@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Arbor</title>
+	<style>
+        body{
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins";
+    background: #ffeeee; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #ffeeee, #ddefbb); /* Chrome 10-25, Safari 5.1-6 */
+   background: linear-gradient(to right, #ffeeee, #ddefbb); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.card{
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.26s ease;
+  width: 10%;
+  height: 40%;
+  background-color: #f1f1f1;
+  margin-top: 15%;
+  margin-left: 13%;
+  font-size: 18px;
+  text-align: center;
+}
+.card:hover{
+  box-shadow: 0 1px 16px 0 rgba(0,0,0,0,2);
+}
+.card{
+	width: 70%;
+	height: 50%;
+}
+.container{
+
+	width: 800px;
+	margin: 50px auto 0;
+	display: table;
+	color: #000;
+	box-sizing: border-box;
+
+}
+p{
+	font-size: 20px;
+	color: #000;
+	font-weight: bold;
+}
+.row{
+	height: 5%
+	width: 30px;
+	margin: 10px 0;
+    }
+.column{
+	background: #ccc;
+	display: table-cell;
+	padding: 10px;
+	width: 15%;
+	text-align: center;
+	color: #fff;
+	vertical-align: middle;
+	border-right: 1px solid #fff;
+	border-left: 1px solid #fff;
+
+}
+.row:nth-child(1) .column:nth-child(1)
+{
+	background: #FEAC5E;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #4BC0C8, #C779D0, #FEAC5E);
+    background: linear-gradient(to right, #4BC0C8, #C779D0, #FEAC5E);
+}
+.row:nth-child(1) .column:nth-child(2)
+{
+	background: #FEAC5E;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #4BC0C8, #C779D0, #FEAC5E);
+    background: linear-gradient(to right, #4BC0C8, #C779D0, #FEAC5E);
+}
+.row:nth-child(2) .column:nth-child(1)
+{
+	background: #FEAC5E;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #4BC0C8, #C779D0, #FEAC5E);
+    background: linear-gradient(to right, #4BC0C8, #C779D0, #FEAC5E);
+}
+.row:nth-child(2) .column:nth-child(2)
+{
+
+	background: #FEAC5E;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #4BC0C8, #C779D0, #FEAC5E);
+    background: linear-gradient(to right, #4BC0C8, #C779D0, #FEAC5E);
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+    </style>
+</head>
+<body>
+
+<div class="card">
+	<div class="container">
+
+		<div class="row">
+			<div class="column">
+				<p>
+                    <a href="manageproducts">Manage Product</a>
+                </p>
+			</div>
+			<div class="column">
+				<p>
+                    <a href="addCategory">Manage Category</a>
+                </p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="column">
+				<p>
+                    <a href="checkorders">View Orders</a>
+                </p>
+			</div>
+			<div class="column">
+				<p>
+                    <a href="viewusers">View User and Add Blogs</a>
+                </p>
+			</div>
+		</div>
+
+</div>
+</div>
+
+</body>
+</html>

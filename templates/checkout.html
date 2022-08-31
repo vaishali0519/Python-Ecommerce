@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% if msg %}
+    <script type="text/javascript" >
+            alert("{{msg}}");
+    </script>
+    {% endif %}
+    <style>
+        body {
+
+          padding: 60px 0;
+          background-color: #FFFACD;
+          margin: 0 auto;
+          width: 500px;
+        }
+        .body-text {
+          padding: 0 20px 30px 20px;
+          font-family: "Roboto";
+          font-size: 1em;
+          color: #333;
+          text-align: center;
+          line-height: 1.2em;
+        }
+        h1{
+          font-size: 20px;
+        }
+        .form-container {
+          margin-top: 19%;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .title {
+          background-color: #008B8B;
+          color: #fff;
+          padding: 1px 0;
+          text-align: center;
+        }
+        h1 {
+          font-size: 1.3em;
+          font-family: "Roboto"
+        }
+        input {
+          margin: 1px 0;
+          padding-left: 3%;
+          font-size: 15px;
+        }
+        input[type="text"]{
+          display: block;
+          height: 50px;
+          width: 97%;
+          border: none;
+          font-weight: bold;
+        }
+
+        input[type="submit"]{
+          display: block;
+          height: 60px;
+          width: 100%;
+          border: none;
+          background-color: #008B8B;
+          color: #fff;
+          margin-top: 2px;
+          cursor: pointer;
+          font-size: 0.9em;
+          text-transform: uppercase;
+          font-weight: bold;
+          cursor: pointer;
+        }
+        input[type="submit"]:hover{
+          background-color: #6FB7E9;
+          transition: 0.3s ease;
+          font-size: 20px;
+        }
+        #column-left {
+          width: 46.5%;
+          float: left;
+          margin-bottom: 2px;
+        }
+        #column-right {
+          width: 46.5%;
+          float: right;
+        }
+    </style>
+</head>
+<body>
+
+<form action="pay1" method="post">
+    <div class="form-container">
+        <div class="title">
+            <h1>Payment</h1>
+        </div>
+        <input type="text" name="cardname" required="required"  pattern="[A-Z]*" placeholder="Card Name"/>
+        <input type="text" name="cardnumber" required  pattern="[0-9]*"  maxlength="12" placeholder="Card Number"/>
+        <input type="text" id="column-left" name="expmonth" required  pattern="[0-9]*"  maxlength="2" placeholder="Exp Month "/>
+        <input type="text" id="column-right" name="expyear" required  pattern="[0-9]*"  maxlength="4" placeholder="Exp Year"/>
+        <input type="text" name="cvv" required="required"  pattern="[0-9]*"  maxlength="3" placeholder="CCV"/>
+        <input type="submit" value="Pay"/>
+    </div>
+</form>
+
+
+</body>
+</html>

@@ -1,0 +1,59 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Arbor</title>
+    <link rel="stylesheet" href="../static/css/bootstrap.css">
+    {% if response %}
+    <script type="text/javascript" >
+            alert("{{response}}");
+    </script>
+    {% endif %}
+
+    {% block h %}
+
+    {% endblock %}
+
+    {% block s %}
+
+    {% endblock %}
+</head>
+<body>
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <ul class="navbar-nav">
+        <li class="nav-item active">
+            <a class="nav-link" href="/admin">Back</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="editCategory">Delete Category</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="addCategory">Add Category<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="tags">Delete Tag</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="addtags">Add Tag</a>
+        </li>
+        <li class="nav-item" style="margin-left: 680px;">
+        <a class="nav-link" href="logout">LOGOUT</a>
+      </li>
+    </ul>
+</nav>
+
+
+{% block b %}
+
+{% endblock %}
+
+{% if message %}
+<div class="container text-center" style="height: 90vh; padding: auto;">
+    {{message}}
+</div>
+{% endif %}
+
+
+</body>
+</html>

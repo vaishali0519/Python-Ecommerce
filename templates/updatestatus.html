@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/css/bootstrap.css">
+    <title>Arbor</title>
+    {% if msg %}
+    <script type="text/javascript" >
+            alert("{{msg}}");
+    </script>
+    {% endif %}
+    <style>
+.card{
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.26s ease;
+  width: 50%;
+
+  background-color: #f1f1f1;
+  margin-left: 25%;
+  margin-right: 5px;
+  margin-top: 20px;
+  font-size: 18px;
+  text-align: center;
+}
+.card:hover{
+  box-shadow: 0 1px 16px 0 rgba(0,0,0,0,2);
+}
+h1{
+  margin-top: 30px;
+  font-size: 25px;
+  text-align: center;
+}
+.myform{
+  padding: 25px;
+}
+.myinput
+{
+  size: 50px;
+}
+
+.submit{
+     width: 250px;
+     height: 6vh;
+     font-size: 15px
+     background-color: #ccc;
+    }
+
+    .submit:hover {
+        background-color: #696969;
+        color: white;
+    }
+</style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+            <a class="nav-link" href="logout">logout</a>
+        </li>
+    </ul>
+</nav>
+
+<h1>Update status</h1>
+<div class="card">
+<form action="updatestatus" method="post" class="myform">
+    <p>
+        <input type="text" name="id" class="myinput" placeholder="Enter Order Id" required>
+    </p>
+    <p>
+        Select Status <br>
+        <select name="status" class="forminput">
+            <option value="PENDING">PENDING</option>
+            <option value="Shipped Out">Shipped Out</option>
+            <option value="Waiting For user approval">Waiting For user approval</option>
+        </select>
+    </p>
+    <p>
+        <input type="submit" class="submit" value="Update">
+    </p>
+</form>
+</div>
+
+
+</body>
+</html>

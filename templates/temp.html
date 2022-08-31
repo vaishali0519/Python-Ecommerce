@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/bootstrap.css">
+    <script src="../static/scripts/jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="../static/font-awesome-master/css/font-awesome.css">
+    <title>Arbor</title>
+
+    {% block h %}
+    {% endblock %}
+
+    <script>
+        function openNav() {
+          document.getElementById("mySidenav").style.width = "250px";
+        }
+
+        function closeNav() {
+          document.getElementById("mySidenav").style.width = "0";
+        }
+
+        $(document).ready(function(e) {
+        $("#bt1").click(function(e) {
+            $(".modal").show();
+        });
+    });
+
+	$(document).ready(function(e) {
+        $("#bt2").click(function(e) {
+            $(".modal").hide();
+        });
+    });
+
+	$(document).ready(function(e) {
+        $("#bt3").click(function(e) {
+            $(".modal").hide();
+        });
+    });
+
+
+		{% if msg %}
+		alert("{{msg}}")
+		{% endif %}
+
+
+
+      </script>
+
+
+
+    <!-- --------------------------CSS--------------------------  -->
+    <style>
+        *{
+            box-sizing: border-box;
+            <!--overflow-x: clip;-->
+            }
+
+            body{
+                background-color: #f7f8fa;
+            }
+
+            header .navbar{
+                padding: 0px 50px 3px 20px;
+            }
+
+            .nav-item {
+                padding: 0px 20px 0px 20px;
+            }
+
+            .search {
+                width: 500px;
+                padding: 2px 5px 2px 5px;
+            }
+            .headerlistitems{
+                padding-top: 5px;
+            }
+
+            input {
+          border-top-style: hidden;
+          border-right-style: hidden;
+          border-left-style: hidden;
+          border-bottom-style: groove;
+          background-color: #f2f2f2;
+           }
+
+        .no-outline:focus {
+          outline: none;
+           }
+
+        form.search input[type=text] {
+            padding: 5px;
+            font-size: 12px;
+            border: 1px solid grey;
+            float: left;
+            width: 85%;
+            background-color: none;
+            border-radius: 10px 0px 0px 10px;
+            }
+
+        form.search button {
+          padding: 5px;
+          font-size: 12px;
+          float: left;
+          width: 15%;
+          background: #2196F3;
+          color: white;
+          border: 1px solid grey;
+          border-left: none;
+          cursor: pointer;
+          border-radius: 0px 10px 10px 0px;
+           }
+
+        form.search button:hover {
+          background: #0b7dda;
+           }
+
+        form.search::after {
+          content: "";
+          clear: both;
+          display: table;
+           }
+
+           .sidenav {
+          height: 100%;
+          width: 0;
+          position: fixed;
+          z-index: 1;
+          top: 0;
+          right: 0;
+          background-color: #111;
+          overflow-x: hidden;
+          transition: 0.5s;
+          padding-top: 60px;
+        }
+
+        .sidenav a {
+          padding: 8px 8px 8px 32px;
+          text-decoration: none;
+          font-size: 15px;
+          color: #818181;
+          display: block;
+          transition: 0.3s;
+        }
+
+        .sidenav a:hover {
+          color: #f1f1f1;
+        }
+
+        .sidenav .closebtn {
+          position: absolute;
+          top: 0;
+          right: 25px;
+          font-size: 36px;
+          margin-left: 50px;
+        }
+
+        footer {
+        background: #222;
+        color: #aaa;
+        padding-top: 10px;
+        }
+
+        footer a {
+        color: #aaa;
+        }
+
+        footer a:hover {
+        color: #fff;
+        }
+
+        footer h3 {
+        color: #0894d1;
+        letter-spacing: 1px;
+        margin: 30px 0 20px;
+        }
+
+        footer .two-column {
+        overflow: hidden;
+        }
+
+        footer .two-column li{
+        width: 50%;
+        float: left;
+        padding: 5px 0;
+        }
+
+        footer .socila-list {
+        overflow: hidden;
+        margin: 20px 0 10px;
+        }
+
+        footer .socila-list li {
+        float: left;
+        margin-right: 3px;
+        opacity: 0.7;
+        overflow: hidden;
+        border-radius: 50%;
+        transition: all 0.3s ease-in-out;
+        }
+
+        footer .socila-list li:hover {
+        opacity: 1;
+        }
+
+        footer .img-thumbnail {
+        background: rgba(0, 0, 0, 0.2);
+        border: 1px solid #444;
+        margin-bottom: 5px;
+        }
+
+        footer .copyright {
+        padding: 15px 0;
+        background: #333;
+        margin-top: 20px;
+        font-size: 15px;
+        }
+
+        footer .copyright span {
+        color: #0894d1;
+        }
+
+        {% block s%}
+        {% endblock %}
+
+    </style>
+    <!-- -------------------------- CSS --------------------------  -->
+</head>
+<body>
+
+    <!-- -------------------------- HEADER AND NAVBAR------------------------------ -->
+
+    <div class="container-fuild sticky-top" style="background-color: #222; box-shadow: 1px 1px 30px 10px rgba(0,0,0,0.5);">
+        <header>
+            <nav class="navbar navbar-expand-sm navbar-light">
+                <ul class="navbar-nav ml-auto headerlistitems">
+                    <li class="nav-item">
+                        <form class="search" action="usersearch" method="post">
+                            <input type="text" class="no-outline" name="search" placeholder="Search our by name">
+                            <button type="submit" class="no-outline">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </form>
+                    </li>
+                    <li class="nav-item divisor" style="color: white;">
+                        <spam>|</spam>
+                    </li>
+                    <li class="nav-item">
+                        <a href="cart" class="nav-link" style="font-size:20px; color: black; padding: 0px 2px 5px 2px;">
+                            <i style="color: white;" class="fa fa-shopping-cart fa-lg"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item divisor" style="color: white;">
+                        <spam>|</spam>
+                    </li>
+                    <li>
+                        <div style="color: black;font-size:20px; padding: 0px 2px 5px 2px;">
+                            <span class="fa fa-user fa-lg" style="cursor:pointer; color: white;" onclick="openNav()"></span>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            {% if loggIn %}
+            <a href="logout">Logout</a>
+            <a href="/changepassword">changepassword</a>
+            <a href="deleteaccount" onclick="return confirm('Are you sure?')">Delete Account</a>
+            {% endif %}
+            {% if not loggIn %}
+            <a href="login">SignIn</a>
+            <a href="register">Register</a>
+            <a href="adminregister">Admin Registration</a>
+            {% endif %}
+        </div>
+
+        <nav class="navbar navbar-expand-md navbar-light">
+            <div>
+                <a href="#" class="navbar-brand" style="padding-left: 60px;">
+                    <img src="../static/images/logo.png" alt="LOGO" style="width: 30px; height: 30px;">
+                    <spam id="logoname" style="color: white; font-size: 22px;">ArBor</spam>
+                </a>
+            </div>
+
+            <div class="navbar navbar-expand-md navbar-light m-auto" style="padding:0px;">
+                <ul class="navbar navbar-nav" style="margin: auto; padding:0px; color: white;">
+                    <li class="nav-items">
+                        <a href="/" class="nav-link" style="color: white;">Home</a>
+                    </li>
+                    <li class="nav-items">
+                        <a href="products" class="nav-link" style="color: white;">Shop</a>
+                    </li>
+                    <li class="nav-items">
+                        <a href='blog' class="nav-link" style="color: white;">Blog</a>
+                    </li>
+                    <li class="nav-items">
+                        <a href="showFAQ" class="nav-link" style="color: white;">FAQ</a>
+                    </li>
+                    <li class="nav-items">
+                        <a href="about" class="nav-link" style="color: white;">About</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <!-- ---------------------- END OF HEADER AND NAVBAR------------------------------ -->
+
+    {% block b%}
+
+    {% endblock %}
+
+
+    <div class="conatiner-fuild">
+        <footer>
+        <div class="container">
+          <div class="row">
+              <div class="col-lg-4">
+                  <h3>Stay in touch</h3>
+                  <div>example@gmail.com</div>
+                  <div>support@gmail.com</div>
+                  <div> (123) 456-789</div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h3>Site Map</h3>
+                    <ul class="list-unstyled two-column">
+                        <li>Home</li>
+                        <li>Services</li>
+                        <li>About</li>
+                        <li>Code</li>
+                        <li>Design</li>
+                    </ul>
+
+                </div>
+
+                <div class="col-lg-4">
+                    <h3>Connect Through</h3>
+                    <ul class="list-unstyled socila-list">
+                        <li><a href="#" style="padding: 10px; font-size: 22px; color: #6666ff;">
+                                <i class="fa fa-twitter fa-lg"></i>
+                        </a></li>
+                        <li><a href="#" style="padding: 10px; font-size: 22px; color: #6666ff;">
+                                <i class="fa fa-facebook fa-lg"></i>
+                        </a></li>
+                        <li><a href="#" style="padding: 10px; font-size: 22px; color: #6666ff;">
+                                <i class="fa fa-instagram fa-lg"></i>
+                        </a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="copyright text-center">
+            Copyright &copy; 2017 <span>ArBor</span>
+        </div>
+    </footer>
+    </div>
+
+
+
+</body>
+</html>

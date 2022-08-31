@@ -1,0 +1,84 @@
+{% extends 'temp.html' %}
+
+{% block s%}
+.allblog{
+            width: 100%;
+            padding: 50px 10px 10px 20px;
+        }
+        .myblogbuttons{
+            padding: 0px 550px;
+        }
+        .myblogbuttons button{
+            background-color: aliceblue;
+            border: 1px solid #f1f1f1;
+            width: 150px;
+            height: 150px;
+            margin: 2px 10px;
+        }
+
+        .myblogbuttons button:hover{
+            border: 1px solid black;
+        }
+{% endblock %}
+
+{% block b %}
+{% if category %}
+<div class="row pb-5" style="margin:0px;">
+    <h2 class="text-center allblog">
+        All Blogs
+    </h2>
+
+    <div class="myblogbuttons">
+        {% for j in category %}
+        <button>
+            <div>
+                {{j[0]}}
+            </div>
+        </button>
+        {% endfor %}
+    </div>
+
+</div>
+{% endif %}
+
+
+
+{% if data %}
+<div class="container">
+    {% for j in category %}
+    <div class="text-center p-5">
+        <h3>{{j[0]}}</h3>
+    </div>
+
+    <div style="padding-bottom: 30px;">
+        <div class="card-deck">
+            {% set v_global = [] %}
+            {% for k in data %}
+            {% if j[0] == k[4] and v_global|length < 4%}
+            <div class="card">
+                <img src="../static/blogImages/{{k[1]}}" class="card-img-top" alt="img1" width="253px" height="200px">
+                <div class="card-body">
+                    <h3 class="card-title">{{k[3]}}</h3>
+                    <p class="card-text"><small class="text-muted">{{k[5]}}</small></p>
+                </div>
+            </div>
+            {% if v_global.append('1') %}{% endif %}
+            {% endif %}
+            {% endfor %}
+        </div>
+        <div style="padding-top: 15px;">
+            <a href='blgbycategory?name={{j[0]}}' style="float: right;">View All ></a>
+        </div>
+    </div>
+     {% endfor %}
+</div>
+{% endif %}
+
+
+
+
+
+{% if msg %}
+{{msg}}
+{% endif %}
+{% endblock %}

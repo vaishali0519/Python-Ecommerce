@@ -1,0 +1,345 @@
+{% extends 'temp.html' %}
+
+{% block h%}
+	<script>
+		{% if msg %}
+		alert("{{msg}}")
+		{% endif %}
+	</script>
+{% endblock %}
+
+
+{% block s %}
+
+
+.mainflip {
+		-webkit-transition: 1s;
+		-webkit-transform-style: preserve-3d;
+		-ms-transition: 1s;
+		-moz-transition: 1s;
+		-moz-transform: perspective(1000px);
+		-moz-transform-style: preserve-3d;
+		-ms-transform-style: preserve-3d;
+		transition: 1s;
+		transform-style: preserve-3d;
+		position: relative;
+	}
+
+	.frontside {
+		position: relative;
+		-webkit-transform: rotateY(0deg);
+		-ms-transform: rotateY(0deg);
+		z-index: 2;
+		margin-bottom: 30px;
+	}
+
+	.backside {
+		position: absolute;
+		top: 0;
+		left: 0;
+		background: white;
+		-webkit-transform: rotateY(-180deg);
+		-moz-transform: rotateY(-180deg);
+		-o-transform: rotateY(-180deg);
+		-ms-transform: rotateY(-180deg);
+		transform: rotateY(-180deg);
+		-webkit-box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+		-moz-box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+		box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+	}
+
+	.frontside,
+	.backside {
+		-webkit-backface-visibility: hidden;
+		-moz-backface-visibility: hidden;
+		-ms-backface-visibility: hidden;
+		backface-visibility: hidden;
+		-webkit-transition: 1s;
+		-webkit-transform-style: preserve-3d;
+		-moz-transition: 1s;
+		-moz-transform-style: preserve-3d;
+		-o-transition: 1s;
+		-o-transform-style: preserve-3d;
+		-ms-transition: 1s;
+		-ms-transform-style: preserve-3d;
+		transition: 1s;
+		transform-style: preserve-3d;
+	}
+
+
+	.btn-primary:hover,
+	.btn-primary:focus {
+		background-color: #108d6f;
+		border-color: #108d6f;
+		box-shadow: none;
+		outline: none;
+	}
+
+	.btn-primary {
+		color: #fff;
+		background-color: #007b5e;
+		border-color: #007b5e;
+	}
+
+	section {
+		padding: 60px 0;
+	}
+
+	section .section-title {
+		text-align: center;
+		color: #007b5e;
+		margin-bottom: 50px;
+		text-transform: uppercase;
+	}
+
+	#team .card {
+		border: none;
+		background: #ffffff;
+	}
+
+	.image-flip:hover .backside,
+	.image-flip.hover .backside {
+		-webkit-transform: rotateY(0deg);
+		-moz-transform: rotateY(0deg);
+		-o-transform: rotateY(0deg);
+		-ms-transform: rotateY(0deg);
+		transform: rotateY(0deg);
+		border-radius: .25rem;
+	}
+
+	.image-flip:hover .frontside,
+	.image-flip.hover .frontside {
+		-webkit-transform: rotateY(180deg);
+		-moz-transform: rotateY(180deg);
+		-o-transform: rotateY(180deg);
+		transform: rotateY(180deg);
+	}
+
+	.mainflip {
+		-webkit-transition: 1s;
+		-webkit-transform-style: preserve-3d;
+		-ms-transition: 1s;
+		-moz-transition: 1s;
+		-moz-transform: perspective(1000px);
+		-moz-transform-style: preserve-3d;
+		-ms-transform-style: preserve-3d;
+		transition: 1s;
+		transform-style: preserve-3d;
+		position: relative;
+	}
+
+	.frontside {
+		position: relative;
+		-webkit-transform: rotateY(0deg);
+		-ms-transform: rotateY(0deg);
+		z-index: 2;
+		margin-bottom: 30px;
+	}
+
+	.backside {
+		position: absolute;
+		top: 0;
+		left: 0;
+		background: white;
+		-webkit-transform: rotateY(-180deg);
+		-moz-transform: rotateY(-180deg);
+		-o-transform: rotateY(-180deg);
+		-ms-transform: rotateY(-180deg);
+		transform: rotateY(-180deg);
+		-webkit-box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+		-moz-box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+		box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+	}
+
+	.frontside,
+	.backside {
+		-webkit-backface-visibility: hidden;
+		-moz-backface-visibility: hidden;
+		-ms-backface-visibility: hidden;
+		backface-visibility: hidden;
+		-webkit-transition: 1s;
+		-webkit-transform-style: preserve-3d;
+		-moz-transition: 1s;
+		-moz-transform-style: preserve-3d;
+		-o-transition: 1s;
+		-o-transform-style: preserve-3d;
+		-ms-transition: 1s;
+		-ms-transform-style: preserve-3d;
+		transition: 1s;
+		transform-style: preserve-3d;
+	}
+
+	.frontside .card,
+	.backside .card {
+		min-height: 312px;
+		max-height: 300px;
+		overflow: hidden;
+	}
+
+	.backside .card a {
+		font-size: 18px;
+		color: #007b5e !important;
+	}
+
+	.card-body{
+		padding: 0px;
+	}
+
+	.frontside .card .card-title{
+
+		font-size: 13px;
+	}
+
+
+	.backside .card .card-title {
+		color: #007b5e !important;
+		position: absolute;
+    	top: 30px;
+    	width: 100%;
+		font-size: 13px;
+	}
+
+	.list-inline {
+		position: absolute;
+    	bottom: 6px;
+		width: 100%;
+	}
+
+    .list-inline-item{
+        display: block;
+}
+
+    .list-group-item a{
+        color: green;
+        cursor: pointer;
+        text-decoration: none;
+    }
+
+	.list-inline-item button{
+		width: 45px;
+		padding: 10px;
+        padding-right: 20px;
+		border-radius: 50px;
+		background-color: rgba(0, 0, 0, 0.5);
+		border: none;
+
+	}
+
+
+	.backside .card .card-text {
+		position: absolute;
+		top: 70px;
+		width: 100%;
+		font-size: 20px;
+
+	}
+
+	.frontside .card .card-body img {
+		width: 252px;
+		height: 250px;
+
+	}
+
+.discount{
+     position: absolute;
+    transform: rotate(45deg);
+    background-color: red;
+    width: 100px;
+    top: 17px;
+    right: -30px;
+	color: white;
+}
+
+
+{% endblock %}
+
+{% block b %}
+
+<div class="container pt-5">
+                    <div class="row">
+                        {% if data %}
+                                {% for k in data %}
+                       <div class="col-3 pb-5">
+                           <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+								<div class="mainflip">
+									<div class="frontside" style="width: 200px;">
+										<div class="card">
+											<div class="card-body text-center">
+												{% if k[7] >0 %}
+												<div class="discount">{{k[7]}}% OFF</div>
+												{% endif %}
+												<p>
+                                                    <a href="/product_detail?product_id={{k[0]}}">
+                                                        <img src="../static/photos/{{k[5]}}" class="cardimg" alt="...">
+                                                    </a>
+                                                </p>
+												<h4 class="card-title">{{k[2]}}</h4>
+											</div>
+										</div>
+									</div>
+									<div class="backside" style="width: 200px;">
+										<div class="card">
+											<div class="card-body text-center">
+												<div></div>
+												<a href="/product_detail?product_id={{k[0]}}">
+                                                    <img src="../static/photos/{{k[5]}}" width="200px" height="310px" class="cardimg" alt="...">
+                                                </a>
+												<h4 class="card-title">{{k[2]}}</h4>
+												{% set discount =k[7] %}
+                                                {% set price = k[4]|int %}
+                                                {% if discount >0 %}
+												<h1 class="card-text">
+                                                    {% set new = price - (price*(discount/100)) %}
+                                                    Rs.<del>{{price}}</del>
+                                                    {{new}}
+                                                </h1>
+                                                {% else %}
+                                                <h1 class="card-text">{{price}}</h1>
+                                                {% endif %}
+
+												<ul class="list-inline">
+
+													<li class="list-inline-item">
+                                                        {% set stock = k[6] %}
+													{% if stock > 0 %}
+                                                        <form method="post" action="addtocart">
+                                                            <select name="quantity" class="no-outline" style="width: 40px; height: 40px;  border-radius: 15px; background: rgba(0,0,0,.3); color: white;">
+                                                                {% for m in range(1,stock)%}
+                                                                <option value="{{m}}">{{m}}</option>
+                                                                {% endfor%}
+                                                            </select>
+                                                            <input type="hidden" value="{{k[0]}}" name="product_id">
+
+                                                            {% if k[7] > 0 %}
+                                                            <input type="hidden" value="{{new}}" name="price">
+                                                            {% else %}
+                                                            <input type="hidden" value="{{price}}" name="price">
+                                                            {% endif %}
+                                                            <button id="{{k[2]}}0" class="no-outline">
+															    <i style="color: white;" class="fa fa-shopping-cart fa-lg"></i>
+														    </button>
+                                                        </form>
+
+                                                        {% else %}
+                                                    <div class="outofstock">
+                                                        Out of Stock
+                                                    </div>
+                                                    {% endif %}
+                                                    </li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+                           </div>
+                       </div>
+
+                        {% endfor %}
+                        {% endif %}
+                    </div>
+                </div>
+
+
+
+
+{% endblock %}

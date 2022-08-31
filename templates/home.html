@@ -1,0 +1,353 @@
+{% extends 'temp.html'%}
+
+{% block h %}
+<!-- Start WOWSlider.com HEAD section -->
+	<link rel="stylesheet" type="text/css" href="../static/engine1/style.css" />
+	<script type="text/javascript" src="../static/engine1/jquery.js"></script>
+	<!-- End WOWSlider.com HEAD section -->
+{% endblock%}
+
+{% block s%}
+    <style>
+
+
+        /* Style the body */
+        body {
+          font-family: Arial, Helvetica, sans-serif;
+          margin: 0;
+          overflow-x: clip;
+        }
+
+        .newsletter{
+
+        }
+
+        .parent-wrapper {
+          position: relative;
+          width: 400px;
+          height: 270px;
+          margin: 40px auto 40px;
+          background-image: url(../static/images/Newsletter.jpg);
+          background-size: 100%;
+          background-repeat: no-repeat;
+          background-position-y: -600%;
+          background-color: #000;
+          border-radius: 4px;
+          color: #FFF;
+          box-shadow: 0px 0px 50px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .close-btn {
+          margin: 20px;
+          font-size: 18px;
+          cursor: pointer;
+        }
+
+        .subscribe-wrapper {
+          position: absolute;
+          left: -30px;
+          right: -30px;
+          height: 200px;
+          padding: 30px;
+          background-image: url(images/aaron-burden-sI8V_ax011I-unsplash.jpg);
+          background-position-x: 272%;
+          background-position-y: -1px;
+          background-repeat: no-repeat;
+          background-color: #FFF;
+          border-radius: 4px;
+          color: #333;
+          box-shadow: 0px 0px 60px 5px rgba(0, 0, 0, 0.4);
+        }
+
+        .subscribe-wrapper:after {
+          position: absolute;
+          content: "";
+          right: -10px;
+          bottom: 71px;
+          width: 0;
+          height: 0;
+          border-left: 0px solid transparent;
+          border-right: 10px solid transparent;
+          border-bottom: 10px solid #7149c7;
+        }
+
+        .subscribe-wrapper h4 {
+          text-align: center;
+          font-size: 20px;
+          font-weight: bold;
+          letter-spacing: 3px;
+          line-height: 28px;
+        }
+
+        .subscribe-wrapper input {
+          position: absolute;
+          bottom: 30px;
+          border: none;
+          border-bottom: 1px solid #d4d4d4;
+          padding: 10px;
+          width: 65%;
+          background: transparent;
+          transition: all .25s ease;
+        }
+
+        .subscribe-wrapper input:focus {
+          outline: none;
+          border-bottom: 1px solid #a77cf4;
+        }
+
+        .subscribe-wrapper .submit-btn {
+          position: absolute;
+          border-radius: 30px;
+          border-bottom-right-radius: 0;
+          border-top-right-radius: 0;
+          background-color: #a77cf4;
+          color: #FFF;
+          padding: 12px 25px;
+          display: inline-block;
+          font-size: 12px;
+          font-weight: bold;
+          letter-spacing: 2px;
+          right: -10px;
+          bottom: 30px;
+          cursor: pointer;
+          transition: all .25s ease;
+          box-shadow: -5px 6px 20px 0px rgba(51, 51, 51, 0.4);
+        }
+
+        .subscribe-wrapper .submit-btn:hover {
+          background-color: #8e62dc;
+        }
+
+
+
+
+
+
+
+
+.features{
+    padding: 40px 0px 40px 0px;
+}
+.features h4{
+    color: #fff;
+}
+
+div.open-overlay {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto;
+    -webkit-transition: all .6s ease 0s;
+    -moz-transition: all .6s ease 0s;
+    transition: all .6s ease 0s;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    transform: rotate(45deg);
+    text-align: center;
+    color: black;
+    border: solid 3px #fff;
+    border-radius: 3px;
+}
+.open-overlay {
+    font-size: 28px;
+    line-height: 60px;
+    width: 60px;
+    height: 60px;
+    margin-top: -60px;
+    margin-left: -30px;
+}
+.open-overlay i {
+    font-size: 25px;
+    line-height: 30px;
+    z-index: 9;
+    margin: 0 auto;
+    cursor: inherit;
+    -webkit-transition: all .6s ease 0s;
+    -moz-transition: all .6s ease 0s;
+    transition: all .6s ease 0s;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    color: white;
+    background: rgba(255,255,255,.0);
+}
+.features-box:hover .open-overlay {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    transform: rotate(0deg);
+    background: rgba(255,255,255,1);
+}
+.features-box:hover .open-overlay i {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    transform: rotate(0deg);
+    color: black;
+    font-weight: bold;
+}
+.features-box h4{
+    padding-top: 20px;
+    text-transform: uppercase;
+}
+.features-box p{
+    color: #bbbbbb;
+    padding-top: 2px;
+    margin-bottom: 0px;
+}
+@media (max-width: 1000px){
+    .features-box{
+        padding-top: 40px;
+    }
+}
+
+
+.blog:hover img{
+    border: 1px solid black;
+    width: 644px;
+}
+
+    </style>
+{% endblock %}
+
+
+
+{% block b %}
+
+
+<div class="container-fuild" style="margin-top: 20px;">
+		<div class="slider">
+			<!-- Start WOWSlider.com BODY section -->
+	<div id="wowslider-container1">
+	<div class="ws_images"><ul>
+<li><img src="../static/data1/images/img1.jpg" alt="img1" title="" id="wows1_0"/></li>
+<li><img src="../static/data1/images/img2.jpg" alt="img2" title="" id="wows1_1"/></li>
+<li><img src="../static/data1/images/img3.jpg" alt="img3" title="" id="wows1_2"/></li>
+<li><img src="../static/data1/images/img4.jpg" alt="img4" title="" id="wows1_3"/></li>
+<li><img src="../static/data1/images/img5.jpg" alt="img5" title="" id="wows1_4"/></li>
+<li><img src="../static/data1/images/img6.jpg" alt="img6" title="" id="wows1_5"/></li>
+</ul></div>
+<div class="ws_bullets"><div>
+<a href="#" title="img1"><img src="../static/data1/tooltips/img1.jpg" alt="img1"/>1</a>
+<a href="#" title="img2"><img src="../static/data1/tooltips/img2.jpg" alt="img2"/>2</a>
+<a href="#" title="img3"><img src="../static/data1/tooltips/img3.jpg" alt="img3"/>3</a>
+<a href="#" title="img4"><img src="../static/data1/tooltips/img4.jpg" alt="img4"/>4</a>
+<a href="#" title="img5"><img src="../static/data1/tooltips/img5.jpg" alt="img5"/>5</a>
+<a href="#" title="img6"><img src="../static/data1/tooltips/img6.jpg" alt="img6"/>6</a>
+</div></div>
+<span class="wsl"><a href="http://wowslider.com">Carousel Plugin</a> by WOWSlider.com v5.2</span>
+	<a href="#" class="ws_frame"></a>
+	</div>
+	<script type="text/javascript" src="../static/engine1/wowslider.js"></script>
+	<script type="text/javascript" src="../static/engine1/script.js"></script>
+	<!-- End WOWSlider.com BODY section -->
+		</div>
+	</div>
+
+
+
+  <section class="features parallax" style="background-color: #000;" data-stellar-background-ratio="0.7" id="features">
+    <div class="container">
+        <div class="row text-center" >
+            <div class="col-lg-4 col-md-4">
+                <div class="features-box">
+                    <div class="open-overlay"><i class="fa fa-check"></i></div>
+                    <h4>High Quality</h4>
+                    <p>Nullam posuere, libero dolor molestie mi, vitae rutrum odio urna non dui.Nullam posuere, libero dolor molestieabd mi, vitae.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4">
+                <div class="features-box">
+                    <div class="open-overlay"><i class="fa fa-heart"></i></div>
+                    <h4>Great Features</h4>
+                    <p>Nullam posuere, libero dolor molestie mi, vitae rutrum odio urna non dui.Nullam posuere, libero dolor molestieabd mi, vitae.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4">
+                <div class="features-box">
+                    <div class="open-overlay"><i class="fa fa-phone"></i></div>
+                    <h4>Customer Services</h4>
+                    <p>Nullam posuere, libero dolor molestie mi, vitae rutrum odio urna non dui.Nullam posuere, libero dolor molestieabd mi, vitae.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<div class="container">
+    <div class="text-center p-5">
+        <h3>All Products</h3>
+    </div>
+
+    <div style="padding-bottom: 30px;">
+        <div class="card-deck">
+
+            {% for k in data1 %}
+
+            <div class="card">
+                <img src="../static/photos/{{k[5]}}" class="card-img-top" alt="img1" width="253px" height="200px">
+                <div class="card-body">
+                    <h4 class="card-title">{{k[2]}}</h4>
+
+                </div>
+            </div>
+
+            {% endfor %}
+        </div>
+        <div style="padding-top: 15px;">
+            <a href='products' style="float: right;">View All ></a>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+<div class="container">
+    <div class="text-center p-5">
+        <h3>Blogs</h3>
+    </div>
+
+    <div style="padding-bottom: 30px;">
+        <div class="card-deck">
+
+            {% for k in data %}
+
+            <div class="card">
+                <img src="../static/blogImages/{{k[1]}}" class="card-img-top" alt="img1" width="253px" height="200px">
+                <div class="card-body">
+                    <h4 class="card-title">{{k[3]}}</h4>
+
+                </div>
+            </div>
+
+            {% endfor %}
+        </div>
+        <div style="padding-top: 15px;">
+            <a href='blog' style="float: right;">View All ></a>
+        </div>
+    </div>
+
+</div>
+
+
+<div class="newletter">
+
+    <div class="parent-wrapper">
+        <span class="close-btn glyphicon glyphicon-remove"></span>
+        <div class="subscribe-wrapper">
+          <h4>SUBSCRIBE TO OUR NEWSLETTER</h4>
+          <input type="email" name="email" class="subscribe-input" placeholder="Your e-mail">
+          <div class="submit-btn">SUBMIT</div>
+        </div>
+      </div>
+</div>
+
+
+{% endblock %}
+
+
+
+
+
+

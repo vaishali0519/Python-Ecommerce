@@ -1,0 +1,115 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Arbor</title>
+    <link rel="stylesheet" href="../static/css/bootstrap.css">
+    <link rel="stylesheet" href="static/font-awesome-master/css/font-awesome.css">
+    {% if response %}
+    <script type="text/javascript" >
+            alert("{{response}}");
+    </script>
+    {% endif %}
+    <style>
+
+
+
+    .search{
+            margin-top: 5px;
+        width: 500px;
+    }
+        .searchform {
+          border-top-style: hidden;
+          border-right-style: hidden;
+          border-left-style: hidden;
+          border-bottom-style: groove;
+          background-color: #f2f2f2;
+           }
+
+        .no-outline:focus {
+          outline: none;
+           }
+
+        .searchform {
+            padding: 5px;
+            font-size: 12px;
+            border: 1px solid grey;
+            float: left;
+            width: 85%;
+            background-color: none;
+            border-radius: 10px 0px 0px 10px;
+            }
+
+        form.search button {
+          padding: 5px;
+          font-size: 18px;
+          float: left;
+          width: 15%;
+          background: #2196F3;
+          color: white;
+          border: 1px solid grey;
+          border-left: none;
+          cursor: pointer;
+          border-radius: 0px 10px 10px 0px;
+           }
+
+        form.search button:hover {
+          background: #0b7dda;
+           }
+
+        form.search::after {
+          content: "";
+          clear: both;
+          display: table;
+           }
+
+
+        {% block s %}
+
+    {% endblock %}
+
+    </style>
+
+</head>
+<body>
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <ul class="navbar-nav">
+        <li class="nav-item active">
+            <a class="nav-link" href="admin">Back</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="manageproducts">Manage products<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="add">Add product</a>
+        </li>
+
+        <li style="margin-left: 120px;">
+            <form class="search" action="search" method="post">
+                <input type="text" class="no-outline searchform" name="search" placeholder="Search by name">
+                <button type="submit" class="no-outline">
+                    <i class="fa fa-search"></i>
+                </button>
+            </form>
+        </li>
+        <li class="nav-item" style="margin-left: 250px;">
+        <a class="nav-link" href="logout">LOGOUT</a>
+      </li>
+    </ul>
+</nav>
+
+
+{% block b %}
+
+{% endblock %}
+
+{% if message %}
+<div class="container text-center" style="height: 90vh; padding: auto;">
+    {{message}}
+</div>
+{% endif %}
+
+
+</body>
+</html>

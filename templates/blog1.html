@@ -1,0 +1,42 @@
+{% extends 'temp.html' %}
+
+{% block s%}
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+
+a{
+color: black;
+}
+
+a:hover{
+text-decoration : none;
+color: black;
+}
+
+{% endblock %}
+
+{% block b %}
+
+
+
+<div class="container pt-5">
+  <h2 class="text-center">{{data[0][4]}}</h2>
+  <div class="row mt-5">
+    {% for k in data %}
+    <div class="col-4 pb-5">
+      <a href="readblog?id={{k[0]}}">
+        <div class="card">
+        <img src="../static/blogImages/{{k[1]}}" class="card-img-top">
+        <div class="card-body">
+          <h4>{{k[3]}}</h4>
+        </div>
+      </div>
+      </a>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}
+

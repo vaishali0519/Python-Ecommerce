@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Message</title>
+    <link rel="stylesheet" href="../static/css/bootstrap.css">
+    <style>
+        .home{
+        position: absolute;
+        top: 40px;
+        left: 40px;
+        text-decoration: none;
+        color: black;
+        font-size: 16px;
+    }
+
+    .home:hover{
+        color: black;
+    }
+    </style>
+</head>
+<body style="background: grey;">
+
+<a href="/" class="home">Back To Home >-<</a>
+
+{% if msg %}
+
+<div class="text-center">
+    <h2 style="margin-top: 250px;">{{msg}}</h2>
+</div>
+
+{% endif %}
+
+{% if data %}
+{{data}}
+{% endif %}
+
+{% if category %}
+{{category}}
+{% endif %}
+
+{% if cat_info %}
+{{cat_info}}
+{% endif %}
+
+</body>
+</html>
